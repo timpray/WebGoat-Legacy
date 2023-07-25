@@ -1,6 +1,7 @@
 /nb-configuration.xml
 /nbactions.xml
 /target/
+/.extract
 /.classpath
 /.project
 /.settings/.jsdtscope
