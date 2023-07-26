@@ -5,8 +5,10 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  build:
+  upload-sarif:
     runs-on: ubuntu-latest
+    permissions:
+      security-events: write
     steps:
       # This step checks out a copy of your repository.
       - name: Checkout repository
