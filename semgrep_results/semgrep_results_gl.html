@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. https://github.com/theZiz/aha -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8"/>
+<title>stdin</title>
+</head>
+<body style="color:white; background-color:black">
+<pre>
+                     
+                     
+┌───────────────────┐
+│ 100 Code Findings │
+└───────────────────┘
+                                                                                
+  <span style="color:aqua;">                                                                  
+  newDesign/assets/plugins/bootstrap-wysihtml5/js/wysihtml5-0.3.0.js </span>        
+       <span style="font-weight:bold;">gitlab.eslint.detect-non-literal-fs-filename</span>                   
+          A variable is present in the filename argument of fs calls, this might
+  allow an attacker to                                                          
+          access anything on your system.                                       
+          Details: https://sg.run/L09Y                                          
+                                                                                
+         2541┆ <span style="font-weight:bold;">iframeDoc.open()</span>;
+                                                                          
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/BackDoors.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-3</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/z561                                          
+                                                                                
+           63┆ <span style="font-weight:bold;">private final static String SELECT_ST = &quot;select userid,   
+  password, ssn, salary, email from employee where userid=&quot;</span>;                 
+                                                                                
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/Challenge2Screen.java   
+  </span>                                                                           
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+          109┆ <span style="font-weight:bold;">protected final static String PASSWORD = &quot;Password&quot;</span>;
+            ⋮┆----------------------------------------
+          121┆ <span style="font-weight:bold;">private String pass = &quot;goodbye&quot;</span>;
+            ⋮┆----------------------------------------
+          109┆ <span style="font-weight:bold;">protected final static String PASSWORD = &quot;Password&quot;</span>;
+            ⋮┆----------------------------------------
+          153┆ if (username.equals(user) &amp;&amp; <span style="font-weight:bold;">password.equals(pass)</span>)
+                                                                                
+  <span style="color:aqua;">                                                                  
+  src/main/java/org/owasp/webgoat/lessons/ClientSideFiltering/ClientSideFilterin
+  g.java </span>                                                                    
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.PATH_TRAVERSAL_IN-1</span>                       
+          A file is opened to read its content. The filename comes from an input
+  parameter. If an                                                              
+          unfiltered parameter is passed to this file API, files from an        
+  arbitrary filesystem location                                                 
+          could be read. This rule identifies potential path traversal          
+  vulnerabilities. In many cases,                                               
+          the constructed file path cannot be controlled by the user.           
+          Details: https://sg.run/R5KK                                          
+                                                                                
+          420┆ is = new BufferedReader(<span style="font-weight:bold;">new FileReader(new                
+  File(content))</span>);                                                           
+            ⋮┆----------------------------------------
+          420┆ is = new BufferedReader(new FileReader(new                       
+  File(<span style="font-weight:bold;">content</span>)));                                                    
+                                                                                
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/CsrfTokenByPass.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.PREDICTABLE_RANDOM-1</span>                      
+          The use of a predictable random value can lead to vulnerabilities when
+  used in certain                                                               
+          security critical contexts. A quick fix could be to replace the use of
+  java.util.Random with                                                         
+          something stronger, such as java.security.SecureRandom.               
+          Details: https://sg.run/1kbD                                          
+                                                                                
+           90┆ token = <span style="font-weight:bold;">random.nextInt()</span>;
+                                                                             
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/DOMInjection.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           59┆ <span style="font-weight:bold;">private final static String KEY = &quot;key&quot;</span>;
+            ⋮┆----------------------------------------
+           63┆ <span style="font-weight:bold;">private final static String key =                         
+  &quot;K1JFWP8BSO8HI52LNPQS8F5L01N&quot;</span>;                                             
+            ⋮┆----------------------------------------
+           71┆ if (fromAJAX.equalsIgnoreCase(&quot;ajax&quot;) &amp;&amp; userKey.length() != 0 &amp;&amp;
+  <span style="font-weight:bold;">userKey.equals(key)</span>)                                                
+                                                                       
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/DOMXSS.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.PATH_TRAVERSAL_IN-1</span>                       
+          A file is opened to read its content. The filename comes from an input
+  parameter. If an                                                              
+          unfiltered parameter is passed to this file API, files from an        
+  arbitrary filesystem location                                                 
+          could be read. This rule identifies potential path traversal          
+  vulnerabilities. In many cases,                                               
+          the constructed file path cannot be controlled by the user.           
+          Details: https://sg.run/R5KK                                          
+                                                                                
+          290┆ is = new BufferedReader(<span style="font-weight:bold;">new FileReader(new                
+  File(content))</span>);                                                           
+            ⋮┆----------------------------------------
+          290┆ is = new BufferedReader(new FileReader(new                       
+  File(<span style="font-weight:bold;">content</span>)));                                                    
+                                                                          
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/DOS_Login.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           63┆ <span style="font-weight:bold;">protected final static String PASSWORD = &quot;Password&quot;</span>;
+            ⋮┆----------------------------------------
+           84┆ <span style="font-weight:bold;">String password = &quot;&quot;</span>;
+            ⋮┆----------------------------------------
+           63┆ <span style="font-weight:bold;">protected final static String PASSWORD = &quot;Password&quot;</span>;
+                                                                              
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/DangerousEval.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           61┆ <span style="font-weight:bold;">public final static String PASSED =                       
+  &quot;__DANGEROUS_EVAL_PASS&quot;</span>;                                                   
+                                                                         
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/Encoding.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.CIPHER_INTEGRITY-1</span>                        
+          The ciphertext produced is susceptible to alteration by an adversary. 
+  This mean that the                                                            
+          cipher provides no way to detect that the data has been tampered with.
+  If the ciphertext can                                                         
+          be controlled by an attacker, it could be altered without detection.  
+          Details: https://sg.run/O4Db                                          
+                                                                                
+          325┆ Cipher passwordDecryptCipher =                                   
+  Cipher.getInstance(&quot;PBEWithMD5AndDES<span style="font-weight:bold;">/CBC/PKCS5Padding</span>&quot;);            
+            ⋮┆----------------------------------------
+          370┆ Cipher passwordEncryptCipher =                                   
+  Cipher.getInstance(&quot;PBEWithMD5AndDES<span style="font-weight:bold;">/CBC/PKCS5Padding</span>&quot;);            
+            ⋮┆----------------------------------------
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           76┆ <span style="font-weight:bold;">private final static String KEY = &quot;key&quot;</span>;
+            ⋮┆----------------------------------------
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.PADDING_ORACLE-1</span>                          
+          This specific mode of CBC with PKCS5Padding is susceptible to padding 
+  oracle attacks. An                                                            
+          adversary could potentially decrypt the message if the system exposed 
+  the difference between                                                        
+          plaintext with invalid padding or valid padding. The distinction      
+  between valid and invalid                                                     
+          padding is usually revealed through distinct error messages being     
+  returned for each                                                             
+          condition.                                                            
+          Details: https://sg.run/eJ3E                                          
+                                                                                
+          325┆ Cipher passwordDecryptCipher =                                   
+  Cipher.getInstance(&quot;PBEWithMD5AndDES<span style="font-weight:bold;">/CBC/PKCS5Padding</span>&quot;);            
+            ⋮┆----------------------------------------
+          370┆ Cipher passwordEncryptCipher =                                   
+  Cipher.getInstance(&quot;PBEWithMD5AndDES<span style="font-weight:bold;">/CBC/PKCS5Padding</span>&quot;);            
+            ⋮┆----------------------------------------
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.WEAK_MESSAGE_DIGEST_MD5-1.WEAK_MESSAGE_DIGES 
+  T_SHA1-1</span>                                                                   
+          DES is considered strong ciphers for modern applications. Currently,  
+  NIST recommends the                                                           
+          usage of AES block ciphers instead of DES.                            
+          Details: https://sg.run/L2R7                                          
+                                                                                
+          465┆ md = <span style="font-weight:bold;">MessageDigest.getInstance(&quot;MD5&quot;)</span>;
+                                                                                
+  <span style="color:aqua;">                                                                  
+  src/main/java/org/owasp/webgoat/lessons/FailOpenAuthentication.java </span>       
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           72┆ <span style="font-weight:bold;">String password = &quot;&quot;</span>;
+            ⋮┆----------------------------------------
+           80┆ if (!&quot;webgoat&quot;.equals(username) ||                               
+  !<span style="font-weight:bold;">password.equals(&quot;webgoat&quot;)</span>)                                        
+                                                                                
+  <span style="color:aqua;">                                                                  
+  src/main/java/org/owasp/webgoat/lessons/GoatHillsFinancial/GoatHillsFinancial.
+  java </span>                                                                      
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           54┆ <span style="font-weight:bold;">public final static String DESCRIPTION = &quot;description&quot;</span>;
+            ⋮┆----------------------------------------
+           84┆ <span style="font-weight:bold;">public final static String PASSWORD = &quot;password&quot;</span>;
+            ⋮┆----------------------------------------
+           92┆ <span style="font-weight:bold;">public final static String SEARCHRESULT_ATTRIBUTE_KEY =   
+  &quot;SearchResult&quot;</span>;                                                            
+            ⋮┆----------------------------------------
+           94┆ <span style="font-weight:bold;">public final static String EMPLOYEE_ATTRIBUTE_KEY =       
+  &quot;Employee&quot;</span>;                                                                
+            ⋮┆----------------------------------------
+           96┆ <span style="font-weight:bold;">public final static String STAFF_ATTRIBUTE_KEY =          
+  &quot;Staff&quot;</span>;                                                                   
+            ⋮┆----------------------------------------
+           84┆ <span style="font-weight:bold;">public final static String PASSWORD = &quot;password&quot;</span>;
+                                                                          
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/HtmlClues.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           64┆ <span style="font-weight:bold;">protected final static String PASSWORD = &quot;Password&quot;</span>;
+            ⋮┆----------------------------------------
+           64┆ <span style="font-weight:bold;">protected final static String PASSWORD = &quot;Password&quot;</span>;
+            ⋮┆----------------------------------------
+           84┆ return (username.equals(&quot;admin&quot;) &amp;&amp;                              
+  <span style="font-weight:bold;">password.equals(&quot;adminpw&quot;)</span>);                                        
+                                                                              
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/InsecureLogin.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           30┆ <span style="font-weight:bold;">private final static String PASSWORD = &quot;clear_pass&quot;</span>;
+            ⋮┆----------------------------------------
+          251┆ <span style="font-weight:bold;">String query = &quot;SELECT * FROM user_data_tan WHERE         
+  first_name = ? AND password = ?&quot;</span>;                                          
+                                                                            
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/LogSpoofing.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           59┆ <span style="font-weight:bold;">private static final String PASSWORD = &quot;password&quot;</span>;
+            ⋮┆----------------------------------------
+           59┆ <span style="font-weight:bold;">private static final String PASSWORD = &quot;password&quot;</span>;
+                                                                                
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/MultiLevelLogin1.java   
+  </span>                                                                           
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           61┆ <span style="font-weight:bold;">private final static String PASSWORD = &quot;pass&quot;</span>;
+            ⋮┆----------------------------------------
+          203┆ <span style="font-weight:bold;">String password = &quot;&quot;</span>;
+            ⋮┆----------------------------------------
+          717┆ <span style="font-weight:bold;">String query = &quot;SELECT * FROM user_data_tan WHERE         
+  first_name = ? AND password = ?&quot;</span>;                                          
+                                                                                
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/MultiLevelLogin2.java   
+  </span>                                                                           
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           61┆ <span style="font-weight:bold;">private final static String PASSWORD = &quot;pass2&quot;</span>;
+            ⋮┆----------------------------------------
+          215┆ <span style="font-weight:bold;">String password = &quot;&quot;</span>;
+            ⋮┆----------------------------------------
+          725┆ <span style="font-weight:bold;">String query = &quot;SELECT * FROM user_data_tan WHERE         
+  first_name = ? AND password = ?&quot;</span>;                                          
+                                                                                
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/PasswordStrength.java   
+  </span>                                                                           
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-3</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/z561                                          
+                                                                                
+          191┆ <span style="font-weight:bold;">String instructions = &quot;The accounts of your web           
+  application are only as safe as the passwords. &quot;</span>                           
+          192┆ <span style="font-weight:bold;">        + &quot;For this exercise, your job is to test several 
+  passwords on &lt;a onclick=\&quot;window.open(this.href,\'_blank\');return false;\&quot;   
+  href=\&quot;https://ho ... </span>                                                     
+          193┆ <span style="font-weight:bold;">        + &quot; You must test all 6 passwords at the same     
+  time...&lt;br&gt;&quot;</span>                                                               
+          194┆ <span style="font-weight:bold;">        + &quot;&lt;b&gt; On your applications you should set good   
+  password requirements! &lt;/b&gt;&quot;</span>;                                              
+            [shortened a long line from output, adjust with                     
+  --max-chars-per-line]                                                         
+                                                                                
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/SessionFixation.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           69┆ <span style="font-weight:bold;">private final static String PASSWORD = &quot;pass3&quot;</span>;
+            ⋮┆----------------------------------------
+          462┆ <span style="font-weight:bold;">String query = &quot;SELECT * FROM user_data_tan WHERE         
+  first_name = ? AND password = ?&quot;</span>;                                          
+            ⋮┆----------------------------------------
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.PREDICTABLE_RANDOM-1</span>                      
+          The use of a predictable random value can lead to vulnerabilities when
+  used in certain                                                               
+          security critical contexts. A quick fix could be to replace the use of
+  java.util.Random with                                                         
+          something stronger, such as java.security.SecureRandom.               
+          Details: https://sg.run/1kbD                                          
+                                                                                
+          797┆ sid = String.valueOf(Math.abs(<span style="font-weight:bold;">random.nextInt()</span> %       
+  100000));                                                                     
+                                                                               
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/UncheckedEmail.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           70┆ <span style="font-weight:bold;">private final String YOUR_REAL_GMAIL_PASSWORD =           
+  &quot;password&quot;</span>;                                                                
+            ⋮┆----------------------------------------
+           79┆ <span style="font-weight:bold;">private final static String GMAIL_PASS = &quot;gPass&quot;</span>;
+            ⋮┆----------------------------------------
+           70┆ <span style="font-weight:bold;">private final String YOUR_REAL_GMAIL_PASSWORD =           
+  &quot;password&quot;</span>;                                                                
+            ⋮┆----------------------------------------
+          106┆ boolean haveCredentials = !(YOUR_REAL_GMAIL_ID.equals(gId) ||    
+  <span style="font-weight:bold;">YOUR_REAL_GMAIL_PASSWORD.equals(gPass)</span>);                            
+            ⋮┆----------------------------------------
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.SMTP_HEADER_INJECTION-1</span>                   
+          Simple Mail Transfer Protocol (SMTP) is a the text based protocol used
+  for email delivery.                                                           
+          Like with HTTP, headers are separate by new line separator. If kuser  
+  input is place in a                                                           
+          header line, the application should remove or replace new line        
+  characters (CR / LF). You                                                     
+          should use a safe wrapper such as Apache Common Email and Simple Java 
+  Mail which filter                                                             
+          special characters that can lead to header injection.                 
+          Details: https://sg.run/bWve                                          
+                                                                                
+          367┆ <span style="font-weight:bold;">msg.setSubject(subject);</span>
+                                                                                
+  <span style="color:aqua;">                                                                  
+  src/main/java/org/owasp/webgoat/lessons/WeakAuthenticationCookie.java </span>     
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           73┆ <span style="font-weight:bold;">protected final static String PASSWORD = &quot;Password&quot;</span>;
+            ⋮┆----------------------------------------
+           73┆ <span style="font-weight:bold;">protected final static String PASSWORD = &quot;Password&quot;</span>;
+            ⋮┆----------------------------------------
+          132┆ if (username.equals(&quot;webgoat&quot;) &amp;&amp;                                
+  <span style="font-weight:bold;">password.equals(&quot;webgoat&quot;)</span>)                                         
+            ⋮┆----------------------------------------
+          136┆ else if (username.equals(&quot;aspect&quot;) &amp;&amp;                            
+  <span style="font-weight:bold;">password.equals(&quot;aspect&quot;)</span>)                                          
+                                                                              
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/WeakSessionID.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           68┆ <span style="font-weight:bold;">protected final static String PASSWORD = &quot;Password&quot;</span>;
+            ⋮┆----------------------------------------
+           68┆ <span style="font-weight:bold;">protected final static String PASSWORD = &quot;Password&quot;</span>;
+                                                                               
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/WsSAXInjection.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           65┆ <span style="font-weight:bold;">private final static String PASSWORD = &quot;password&quot;</span>;
+            ⋮┆----------------------------------------
+          184┆ <span style="font-weight:bold;">private static String PASSWORD_TAG = &quot;password&quot;</span>;
+            ⋮┆----------------------------------------
+           65┆ <span style="font-weight:bold;">private final static String PASSWORD = &quot;password&quot;</span>;
+            ⋮┆----------------------------------------
+           69┆ <span style="font-weight:bold;">private static String template1 = &quot;&lt;?xml version='1.0'    
+  encoding='UTF-8'?&gt;\n&quot; + &quot;&lt;wsns0:Envelope\n&quot;</span>                                
+           70┆ <span style="font-weight:bold;">        + &quot;                                               
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'\n&quot;</span>                   
+           71┆ <span style="font-weight:bold;">        + &quot;                                               
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'\n&quot;</span>                            
+           72┆ <span style="font-weight:bold;">        + &quot;                                               
+  xmlns:wsns0='http://schemas.xmlsoap.org/soap/envelope/'\n&quot;</span>                 
+           73┆ <span style="font-weight:bold;">        + &quot;                                               
+  xmlns:wsns1='http://lessons.webgoat.owasp.org'&gt;\n&quot; + &quot;  &lt;wsns0:Body&gt;\n&quot;</span>    
+           74┆ <span style="font-weight:bold;">        + &quot;    &lt;wsns1:changePassword&gt;\n&quot; + &quot;      &lt;id     
+  xsi:type='xsd:int'&gt;101&lt;/id&gt;\n&quot;</span>                                             
+           75┆ <span style="font-weight:bold;">        + &quot;      &lt;password xsi:type='xsd:string'&gt;&quot;</span>;
+            ⋮┆----------------------------------------
+           77┆ <span style="font-weight:bold;">private static String template2 = &quot;&lt;/password&gt;\n&quot; + &quot;     
+  &lt;/wsns1:changePassword&gt;\n&quot; + &quot;  &lt;/wsns0:Body&gt;\n&quot;</span>                           
+           78┆ <span style="font-weight:bold;">        + &quot;&lt;/wsns0:Envelope&gt;&quot;</span>;
+            ⋮┆----------------------------------------
+          184┆ <span style="font-weight:bold;">private static String PASSWORD_TAG = &quot;password&quot;</span>;
+            ⋮┆----------------------------------------
+          207┆ if (<span style="font-weight:bold;">localName.equals(PASSWORD_TAG)</span>) password =         
+  text.toString();                                                              
+            ⋮┆----------------------------------------
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.XXE_XMLREADER-1</span>                           
+          XML External Entity (XXE) attacks can occur when an XML parser        
+  supports XML entities while                                                   
+          processing XML received from an untrusted source.                     
+          Details: https://sg.run/GbAn                                          
+                                                                                
+          161┆ <span style="font-weight:bold;">reader.parse(new InputSource(new StringReader(xml)));</span>
+                                                                               
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/XPATHInjection.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           77┆ <span style="font-weight:bold;">private final static String PASSWORD = &quot;Password&quot;</span>;
+            ⋮┆----------------------------------------
+           77┆ <span style="font-weight:bold;">private final static String PASSWORD = &quot;Password&quot;</span>;
+                                                                                
+  <span style="color:aqua;">                                                                  
+  src/main/java/org/owasp/webgoat/lessons/instructor/SQLInjection/Login_i.java  
+  </span>                                                                           
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-3</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/z561                                          
+                                                                                
+           48┆ <span style="font-weight:bold;">String query = &quot;SELECT * FROM employee WHERE userid = ?   
+  and password = ?&quot;</span>;                                                         
+                                                                       
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/session/Course.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.PATH_TRAVERSAL_IN-1</span>                       
+          A file is opened to read its content. The filename comes from an input
+  parameter. If an                                                              
+          unfiltered parameter is passed to this file API, files from an        
+  arbitrary filesystem location                                                 
+          could be read. This rule identifies potential path traversal          
+  vulnerabilities. In many cases,                                               
+          the constructed file path cannot be controlled by the user.           
+          Details: https://sg.run/R5KK                                          
+                                                                                
+           83┆ String fileName = new File(<span style="font-weight:bold;">s</span>).getName();
+                                                                         
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/session/CreateDB.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-3</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/z561                                          
+                                                                                
+          190┆ <span style="font-weight:bold;">String createTableStatement = &quot;CREATE TABLE               
+  user_system_data (&quot; + &quot;userid varchar(5) not null primary key,&quot;</span>            
+          191┆ <span style="font-weight:bold;">          + &quot;user_name varchar(12),&quot; + &quot;password          
+  varchar(10),&quot; + &quot;cookie varchar(30)&quot; + &quot;)&quot;</span>;                                
+            ⋮┆----------------------------------------
+          468┆ <span style="font-weight:bold;">String createTableStatement = &quot;CREATE TABLE user_data_tan 
+  (&quot; + &quot;userid int not null,&quot;</span>                                                
+          469┆ <span style="font-weight:bold;">          + &quot;first_name varchar(20),&quot; + &quot;last_name        
+  varchar(20),&quot; + &quot;cc_number varchar(30),&quot;</span>                                   
+          470┆ <span style="font-weight:bold;">          + &quot;cc_type varchar(10),&quot; + &quot;cookie varchar(20),&quot;
+  + &quot;login_count int,&quot; + &quot;password varchar(20)&quot;</span>                              
+          471┆ <span style="font-weight:bold;">         
+  + &quot;)&quot;</span>;                    
+            ⋮┆----------------------------------------
+          572┆ <span style="font-weight:bold;">String createTable = &quot;CREATE TABLE employee (&quot;</span>
+          573┆ <span style="font-weight:bold;">          // + &quot;userid INT GENERATED ALWAYS AS IDENTITY   
+  PRIMARY KEY,&quot;</span>                                                              
+          574┆ <span style="font-weight:bold;">          + &quot;userid INT NOT NULL PRIMARY KEY,&quot; +          
+  &quot;first_name VARCHAR(20),&quot; + &quot;last_name VARCHAR(20),&quot;</span>                       
+          575┆ <span style="font-weight:bold;">          + &quot;ssn VARCHAR(12),&quot; + &quot;password VARCHAR(10),&quot; +
+  &quot;title VARCHAR(20),&quot; + &quot;phone VARCHAR(13),&quot;</span>                                
+          576┆ <span style="font-weight:bold;">          + &quot;address1 VARCHAR(80),&quot; + &quot;address2           
+  VARCHAR(80),&quot; + &quot;manager INT,&quot; + &quot;start_date CHAR(8),&quot;</span>                     
+          577┆ <span style="font-weight:bold;">          + &quot;salary INT,&quot; + &quot;ccn VARCHAR(30),&quot; +          
+  &quot;ccn_limit INT,&quot; + &quot;email VARCHAR(30),&quot; // reason</span>                          
+          578┆ <span style="font-weight:bold;">          // for the recent  
+  write-up</span>                                      
+          579┆ <span style="font-weight:bold;">          + &quot;disciplined_date CHAR(8),&quot; // date of write  
+  up, NA otherwise</span>                                                           
+          580┆ <span style="font-weight:bold;">          + &quot;disciplined_notes VARCHAR(60),&quot; // reason for
+  the recent write-up</span>                                                        
+          581┆ <span style="font-weight:bold;">          + &quot;personal_description VARCHAR(60)&quot; // We can  
+  be rude here</span>                                                               
+             [hid 2 additional lines, adjust with --max-lines-per-finding] 
+                                                                                
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/session/DatabaseUtilities.java  
+  </span>                                                                           
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.DMI_CONSTANT_DB_PASSWORD-1.HARD_CODE_PASSWORD
+  3</span>                                                                          
+          This code creates a database connect using a hardcoded, constant      
+  password. Anyone with                                                         
+          access to either the source code or the compiled code can easily learn
+  the password.                                                                 
+          Details: https://sg.run/qZAx                                          
+                                                                                
+          112┆ <span style="font-weight:bold;">return DriverManager.getConnection(url, &quot;sa&quot;, &quot;&quot;)</span>;
+            ⋮┆----------------------------------------
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.DMI_EMPTY_DB_PASSWORD-1.HARD_CODE_PASSWORD-2                                                                            
+          This code creates a database connect using a blank or empty password. 
+  This indicates that                                                           
+          the database is not protected by a password.                          
+          Details: https://sg.run/lW3j                                          
+                                                                                
+          112┆ return DriverManager.getConnection(url, &quot;sa&quot;, &quot;&quot;)</span>;
+            ⋮┆----------------------------------------
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_PASSWORD-1</span>                      
+          Passwords should not be kept in the source code. The source code can  
+  be widely shared in an                                                        
+          enterprise environment, and is certainly shared in open source. To be 
+  managed safely,                                                               
+          passwords and secret keys should be stored in separate configuration  
+  files or keystores.                                                           
+          Details: https://sg.run/pNRN                                          
+                                                                                
+          100┆ <span style="font-weight:bold;">return DriverManager.getConnection(url, userPrefix + &quot;_&quot; +
+  user, password)</span>;                                                           
+                                                                           
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/session/ECSFactory.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           69┆ <span style="font-weight:bold;">public final static String PASSWORD = &quot;Password&quot;</span>;
+            ⋮┆----------------------------------------
+           69┆ <span style="font-weight:bold;">public final static String PASSWORD = &quot;Password&quot;</span>;
+            ⋮┆----------------------------------------
+          183┆ if (<span style="font-weight:bold;">name.equals(PASSWORD)</span>)
+                                                                              
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/session/LessonTracker.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.PATH_TRAVERSAL_IN-1</span>                       
+          A file is opened to read its content. The filename comes from an input
+  parameter. If an                                                              
+          unfiltered parameter is passed to this file API, files from an        
+  arbitrary filesystem location                                                 
+          could be read. This rule identifies potential path traversal          
+  vulnerabilities. In many cases,                                               
+          the constructed file path cannot be controlled by the user.           
+          Details: https://sg.run/R5KK                                          
+                                                                                
+          203┆ in = <span style="font-weight:bold;">new FileInputStream(fileName)</span>;
+            ⋮┆----------------------------------------
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.PATH_TRAVERSAL_OUT-1.PATH_TRAVERSAL_OUT-1</span> 
+          A file is opened to write to its contents. The filename comes from an 
+  input parameter. If an                                                        
+          unfiltered parameter is passed to this file API, files at an arbitrary
+  filesystem location                                                           
+          could be modified. This rule identifies potential path traversal      
+  vulnerabilities. In many                                                      
+          cases, the constructed file path cannot be controlled by the user.    
+          Details: https://sg.run/ALZ4                                          
+                                                                                
+          350┆ out = new FileOutputStream(<span style="font-weight:bold;">fileName</span>);
+                                                                               
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/session/WebgoatContext.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>                           
+          Cryptographic keys should not be kept in the source code. The source  
+  code can be widely                                                            
+          shared in an enterprise environment, and is certainly shared in open  
+  source. To be managed                                                         
+          safely, passwords and secret keys should be stored in separate        
+  configuration files or                                                        
+          keystores.                                                            
+          Details: https://sg.run/obGN                                          
+                                                                                
+           17┆ <span style="font-weight:bold;">public final static String DATABASE_PASSWORD =            
+  &quot;DatabasePassword&quot;</span>;                                                        
+            ⋮┆----------------------------------------
+           17┆ <span style="font-weight:bold;">public final static String DATABASE_PASSWORD =            
+  &quot;DatabasePassword&quot;</span>;                                                        
+                                                                                
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/session/WebgoatProperties.java  
+  </span>                                                                           
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.PATH_TRAVERSAL_IN-1</span>                       
+          A file is opened to read its content. The filename comes from an input
+  parameter. If an                                                              
+          unfiltered parameter is passed to this file API, files from an        
+  arbitrary filesystem location                                                 
+          could be read. This rule identifies potential path traversal          
+  vulnerabilities. In many cases,                                               
+          the constructed file path cannot be controlled by the user.           
+          Details: https://sg.run/R5KK                                          
+                                                                                
+           53┆ File propertiesFile = new File(<span style="font-weight:bold;">propertiesFileName</span>);
+            ⋮┆----------------------------------------
+           57┆ FileInputStream in = <span style="font-weight:bold;">new                                  
+  FileInputStream(propertiesFile)</span>;                                           
+                                                                         
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/util/Interceptor.java </span>
+       <span style="font-weight:bold;">gitlab.find_sec_bugs.UNENCRYPTED_SOCKET-1.UNENCRYPTED_SERVER_SOCKE
+  T-1</span>                                                                        
+          Beyond using an SSL socket, you need to make sure your use of         
+  SSLSocketFactory does all the                                                 
+          appropriate certificate validation checks to make sure you are not    
+  subject to man-in-the-                                                        
+          middle attacks. Please read the OWASP Transport Layer Protection Cheat
+  Sheet for details on                                                          
+          how to do this correctly.                                             
+          Details: https://sg.run/4k1Z                                          
+                                                                                
+           88┆ osgSocket = <span style="font-weight:bold;">new Socket(osgServerName,                     
+  Integer.parseInt(osgServerPort))</span>;                                          
+                                                           
+  <span style="color:aqua;">  src/main/webapp/js/ace/worker-coffee.js </span>
+       <span style="font-weight:bold;">gitlab.eslint.detect-non-literal-require</span>                       
+          Detected the use of require(variable). Calling require with a         
+  non-literal argument might                                                    
+          allow an attacker to load an run arbitrary code, or access arbitrary  
+  files.                                                                        
+          Details: https://sg.run/5JJ6                                          
+                                                                                
+            1┆  ...                                                             
+  <span style="font-weight:bold;">on(e,t){postMessa</span>ge({type:&quot;call&quot;,id:t,data:e})},this.emit=functio   
+  n(e,t){postMessage({type:&quot;event&quot;,name:e,data:t})}}.call(i.prototype),new i};va
+  t= ...                                                                     
+            2┆ <span style="font-weight:bold;">\f\r                                                      
+  \u00a0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009
+  \u200a\u202f\u205f\u3000\u2028\u2029\ufeff&quot;;if(!String.prototype.tri ... </span>  
+            [shortened a long line from output, adjust with                     
+  --max-chars-per-line]                                                         
+                                                        
+  <span style="color:aqua;">  src/main/webapp/js/ace/worker-css.js </span>
+       <span style="font-weight:bold;">gitlab.eslint.detect-non-literal-require</span>                       
+          Detected the use of require(variable). Calling require with a         
+  non-literal argument might                                                    
+          allow an attacker to load an run arbitrary code, or access arbitrary  
+  files.                                                                        
+          Details: https://sg.run/5JJ6                                          
+                                                                                
+            1┆  ...                                                             
+  <span style="font-weight:bold;">on(e,t){postMessa</span>ge({type:&quot;call&quot;,id:t,data:e})},this.emit=functio   
+  n(e,t){postMessage({type:&quot;event&quot;,name:e,data:t})}}.call(i.prototype),new i};va
+  t= ...                                                                     
+            2┆ <span style="font-weight:bold;">\f\r                                                      
+  \u00a0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009
+  \u200a\u202f\u205f\u3000\u2028\u2029\ufeff&quot;;if(!String.prototype.tri ... </span>  
+            [shortened a long line from output, adjust with                     
+  --max-chars-per-line]                                                         
+                                                         
+  <span style="color:aqua;">  src/main/webapp/js/ace/worker-html.js </span>
+       <span style="font-weight:bold;">gitlab.eslint.detect-non-literal-require</span>                       
+          Detected the use of require(variable). Calling require with a         
+  non-literal argument might                                                    
+          allow an attacker to load an run arbitrary code, or access arbitrary  
+  files.                                                                        
+          Details: https://sg.run/5JJ6                                          
+                                                                                
+            1┆  ... 
+            2┆ <span style="font-weight:bold;"></span>&quot;||c==&quot; &quot;||c==&quot;&lt;&quot;||c==&quot;&amp;&quot;)return                       
+  e.unget(l),!1;if(n===c)return                                                 
+  e.unget(l),!1;if(c==&quot;#&quot;){c=e.shift(1);if(c===i.EOF)return                     
+  t._parseError(&quot;expected-nu ...                                             
+            3┆ <span style="font-weight:bold;"></span>\f                                                     
+  \r&amp;&lt;&gt;\&quot;'=`]&quot;);o===r.EOF&amp;&amp;(t._parseError(&quot;eof-in-attribute-value-no-quotes&quot;),t.
+  _emitCurrentToken()),e.commit(),t._currentAttribute().nodeValue+=i ...     
+            4┆ <span style="font-weight:bold;"></span>\f\r                                                   
+  \u00a0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009
+  \u200a\u202f\u205f\u3000\u2028\u2029\ufeff&quot;;if(!String.prototype ...       
+            [shortened a long line from output, adjust with                     
+  --max-chars-per-line]                                                         
+                                                         
+  <span style="color:aqua;">  src/main/webapp/js/ace/worker-json.js </span>
+       <span style="font-weight:bold;">gitlab.eslint.detect-non-literal-require</span>                       
+          Detected the use of require(variable). Calling require with a         
+  non-literal argument might                                                    
+          allow an attacker to load an run arbitrary code, or access arbitrary  
+  files.                                                                        
+          Details: https://sg.run/5JJ6                                          
+                                                                                
+            1┆  ...                                                             
+  <span style="font-weight:bold;">on(e,t){postMessa</span>ge({type:&quot;call&quot;,id:t,data:e})},this.emit=functio   
+  n(e,t){postMessage({type:&quot;event&quot;,name:e,data:t})}}.call(i.prototype),new i};va
+  t= ...                                                                     
+            2┆ <span style="font-weight:bold;">\f\r                                                      
+  \u00a0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009
+  \u200a\u202f\u205f\u3000\u2028\u2029\ufeff&quot;;if(!String.prototype.tri ... </span>  
+            [shortened a long line from output, adjust with                     
+  --max-chars-per-line]                                                         
+                                                        
+  <span style="color:aqua;">  src/main/webapp/js/ace/worker-lua.js </span>
+       <span style="font-weight:bold;">gitlab.eslint.detect-non-literal-require</span>                       
+          Detected the use of require(variable). Calling require with a         
+  non-literal argument might                                                    
+          allow an attacker to load an run arbitrary code, or access arbitrary  
+  files.                                                                        
+          Details: https://sg.run/5JJ6                                          
+                                                                                
+            1┆                                                                  
+  r=this._eventRegistry[e]=[]),r.indexOf(t)==-1&amp;&amp;r[n?&quot;unshift&quot;:&quot;push&quot;](t),t},r.o
+  ff=r.removeListener=r.removeEventListener=function(e,t){this._eventRegistry=th
+  is._ ...                                                                   
+            2┆ <span style="font-weight:bold;"></span>&quot;;case&quot;b&quot;:return C++,&quot;\b&quot;;case&quot;f&quot;:return               
+  C++,&quot;\f&quot;;case&quot;z&quot;:return                                                       
+  C++,H(),&quot;&quot;;case&quot;x&quot;:if(Z(t.charCodeAt(C+1))&amp;&amp;Z(t.charCodeAt(C+2)))return       
+  C+=3,&quot;\\&quot;+ ...                                                             
+            3┆ <span style="font-weight:bold;"></span>\f\r                                                   
+  \u00a0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009
+  \u200a\u202f\u205f\u3000\u2028\u2029\ufeff&quot;;if(!String.prototype ...       
+            [shortened a long line from output, adjust with                     
+  --max-chars-per-line]                                                         
+                                                        
+  <span style="color:aqua;">  src/main/webapp/js/ace/worker-php.js </span>
+       <span style="font-weight:bold;">gitlab.eslint.detect-non-literal-require</span>                       
+          Detected the use of require(variable). Calling require with a         
+  non-literal argument might                                                    
+          allow an attacker to load an run arbitrary code, or access arbitrary  
+  files.                                                                        
+          Details: https://sg.run/5JJ6                                          
+                                                                                
+            1┆  ... 
+            2┆ <span style="font-weight:bold;"></span>&quot;,e:&quot;};return                                         
+  e.replace(/~\\\\([\\\\$nrtfve]|[xX][0-9a-fA-F]{1,2}|[0-7]{1,3})~/g,function(e)
+  {var t=e[1];return n[t]!==undefined?n[t]:&quot;x&quot;===t[0]|| ...                  
+            3┆ <span style="font-weight:bold;"></span>\f\r                                                   
+  \u00a0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009
+  \u200a\u202f\u205f\u3000\u2028\u2029\ufeff&quot;;if(!String.prototype ...       
+            [shortened a long line from output, adjust with                     
+  --max-chars-per-line]                                                         
+                                                         
+  <span style="color:aqua;">  src/main/webapp/js/angular/angular.js </span>
+       <span style="font-weight:bold;">gitlab.eslint.detect-non-literal-fs-filename</span>                   
+          A variable is present in the filename argument of fs calls, this might
+  allow an attacker to                                                          
+          access anything on your system.                                       
+          Details: https://sg.run/L09Y                                          
+                                                                                
+         8321┆ <span style="font-weight:bold;">xhr.open(method, url, true)</span>;
+            ⋮┆----------------------------------------
+       <span style="font-weight:bold;">gitlab.eslint.detect-possible-timing-attacks</span>                   
+          String comparisons using '===', '!==', '!=' and '==' is vulnerable to 
+  timing attacks. More                                                          
+          info: https://snyk.io/blog/node-js-timing-attack-ccc-ctf/             
+          Details: https://sg.run/GwwB                                          
+                                                                                
+         3982┆ else <span style="font-weight:bold;">if (hash === 'top') $window.scrollTo(0, 0);</span>
+            ⋮┆----------------------------------------
+         7056┆ <span style="font-weight:bold;">if(token == tokens2[j]) continue outer;</span>
+            ⋮┆----------------------------------------
+        18006┆ <span style="font-weight:bold;">if(token == tokens2[j]) continue outer;</span>
+                                                    
+  <span style="color:aqua;">  src/main/webapp/lessonJS/eval.js </span>
+       <span style="font-weight:bold;">gitlab.eslint.detect-non-literal-fs-filename</span>                   
+          A variable is present in the filename argument of fs calls, this might
+  allow an attacker to                                                          
+          access anything on your system.                                       
+          Details: https://sg.run/L09Y                                          
+                                                                                
+           26┆ <span style="font-weight:bold;">http_request.open(method, url, true)</span>;
+                                                                                
+  <span style="color:aqua;">                                                                  
+  src/main/webapp/plugins/bootstrap-wysihtml5/js/wysihtml5-0.3.0.js </span>         
+       <span style="font-weight:bold;">gitlab.eslint.detect-non-literal-fs-filename</span>                   
+          A variable is present in the filename argument of fs calls, this might
+  allow an attacker to                                                          
+          access anything on your system.                                       
+          Details: https://sg.run/L09Y                                          
+                                                                                
+         2541┆ <span style="font-weight:bold;">iframeDoc.open()</span>;
+</pre>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. https://github.com/theZiz/aha -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8"/>
+<title>stdin</title>
+</head>
+<body style="color:white; background-color:black">
+<pre>
+                    
+                    
+┌──────────────────┐
+│ 17 Code Findings │
+└──────────────────┘
+                                                                               
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/AbstractLesson.java </span>
+       <span style="font-weight:bold;">contrib.owasp.java.ssrf.ssrf.owasp.java.ssrf.java.net.url</span>      
+          A parameter being passed directly into java.net.URL function most     
+  likely lead to SSRF.                                                          
+          Details: https://sg.run/ndOd                                          
+                                                                                
+          694┆ <span style="font-weight:bold;">public static Element readFromURL(String url) {</span>
+          695┆ <span style="font-weight:bold;">    ElementContainer ec = new ElementContainer();</span>
+          696┆ <span style="font-weight:bold;"></span>
+          697┆ <span style="font-weight:bold;">    try {</span>
+          698┆ <span style="font-weight:bold;">        URL u = new URL(url);</span>
+          699┆ <span style="font-weight:bold;">        HttpURLConnection huc = (HttpURLConnection)       
+  u.openConnection();</span>                                                        
+          700┆ <span style="font-weight:bold;">        BufferedReader reader = new BufferedReader(new    
+  InputStreamReader(huc.getInputStream()));</span>                                  
+          701┆ <span style="font-weight:bold;">        String line;</span>
+          702┆ <span style="font-weight:bold;"></span>
+          703┆ <span style="font-weight:bold;">        while ((line = reader.readLine()) != null) {</span>
+             [hid 11 additional lines, adjust with --max-lines-per-finding] 
+       <span style="font-weight:bold;">java.lang.security.audit.formatted-sql-string.formatted-sql-string  [0m                                                                           
+          Detected a formatted string in a SQL statement. This could lead to SQL
+  injection if                                                                  
+          variables in the SQL statement are not properly sanitized. Use a      
+  prepared statements                                                           
+          (java.sql.PreparedStatement) instead. You can obtain a                
+  PreparedStatement using                                                       
+          'connection.prepareStatement'.                                        
+          Details: https://sg.run/OPXp                                          
+                                                                                
+          623┆ ResultSet answer_results =                                       
+  answer_statement.executeQuery(query)</span>;                               
+                                                                         
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/Encoding.java </span>
+       <span style="font-weight:bold;">java.lang.security.audit.cbc-padding-oracle.cbc-padding-oracle</span> 
+          Using CBC with PKCS5Padding is susceptible to padding oracle attacks. 
+  A malicious actor                                                             
+          could discern the difference between plaintext with valid or invalid  
+  padding. Further, CBC                                                         
+          mode does not include any integrity checks. Use 'AES/GCM/NoPadding'   
+  instead.                                                                      
+          Details: https://sg.run/ydxr                                          
+                                                                                
+  <span style="color:lime;">         ▶▶┆ Autofix ▶</span> &quot;AES/GCM/NoPadding&quot;
+          325┆ Cipher passwordDecryptCipher =                                   
+  Cipher.getInstance(<span style="font-weight:bold;">&quot;PBEWithMD5AndDES/CBC/PKCS5Padding&quot;</span>);            
+            ⋮┆----------------------------------------
+  <span style="color:lime;">         ▶▶┆ Autofix ▶</span> &quot;AES/GCM/NoPadding&quot;
+          370┆ Cipher passwordEncryptCipher =                                   
+  Cipher.getInstance(<span style="font-weight:bold;">&quot;PBEWithMD5AndDES/CBC/PKCS5Padding&quot;</span>);            
+            ⋮┆----------------------------------------
+       <span style="font-weight:bold;">java.lang.security.audit.crypto.des-is-deprecated.des-is-deprecate
+  </span>                                                                           
+          DES is considered deprecated. AES is the recommended cipher. Upgrade  
+  to use AES. See                                                               
+          https://www.nist.gov/news-events/news/2005/06/nist-withdraws-outdated-
+  data-encryption-                                                              
+          standard for more information.                                        
+          Details: https://sg.run/5Q73                                          
+                                                                                
+  <span style="color:lime;">         ▶▶┆ Autofix ▶</span> &quot;AES/GCM/NoPadding&quot;
+          325┆ Cipher passwordDecryptCipher =                                   
+  Cipher.getInstance(<span style="font-weight:bold;">&quot;PBEWithMD5AndDES/CBC/PKCS5Padding&quot;</span>);            
+            ⋮┆----------------------------------------
+  <span style="color:lime;">         ▶▶┆ Autofix ▶</span> &quot;AES/GCM/NoPadding&quot;
+          370┆ Cipher passwordEncryptCipher =                                   
+  Cipher.getInstance(<span style="font-weight:bold;">&quot;PBEWithMD5AndDES/CBC/PKCS5Padding&quot;</span>);            
+            ⋮┆----------------------------------------
+       <span style="font-weight:bold;">java.lang.security.audit.crypto.use-of-md5.use-of-md5</span>          
+          Detected MD5 hash algorithm which is considered insecure. MD5 is not  
+  collision resistant and                                                       
+          is therefore not suitable as a cryptographic signature. Use HMAC      
+  instead.                                                                      
+          Details: https://sg.run/ryJn                                          
+                                                                                
+  <span style="color:lime;">         ▶▶┆ Autofix ▶</span> &quot;SHA-512&quot;
+          465┆ md = MessageDigest.getInstance(<span style="font-weight:bold;">&quot;MD5&quot;</span>);
+                                                                                
+  <span style="color:aqua;">                                                                  
+  src/main/java/org/owasp/webgoat/lessons/GoatHillsFinancial/DefaultLessonAction
+  .java </span>                                                                     
+       <span style="font-weight:bold;">java.lang.security.audit.formatted-sql-string.formatted-sql-string  [0m                                                                           
+          Detected a formatted string in a SQL statement. This could lead to SQL
+  injection if                                                                  
+          variables in the SQL statement are not properly sanitized. Use a      
+  prepared statements                                                           
+          (java.sql.PreparedStatement) instead. You can obtain a                
+  PreparedStatement using                                                       
+          'connection.prepareStatement'.                                        
+          Details: https://sg.run/OPXp                                          
+                                                                                
+          252┆ ResultSet answer_results =                                       
+  answer_statement.executeQuery(query)</span>;                               
+                                                                                
+  <span style="color:aqua;">                                                                  
+  src/main/java/org/owasp/webgoat/lessons/GoatHillsFinancial/Login.java </span>     
+       <span style="font-weight:bold;">java.lang.security.audit.formatted-sql-string.formatted-sql-string  [0m                                                                           
+          Detected a formatted string in a SQL statement. This could lead to SQL
+  injection if                                                                  
+          variables in the SQL statement are not properly sanitized. Use a      
+  prepared statements                                                           
+          (java.sql.PreparedStatement) instead. You can obtain a                
+  PreparedStatement using                                                       
+          'connection.prepareStatement'.                                        
+          Details: https://sg.run/OPXp                                          
+                                                                                
+          127┆ ResultSet answer_results =                                       
+  answer_statement.executeQuery(query)</span>;                               
+                                                                                
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/SQLInjection/Login.java 
+  </span>                                                                           
+       <span style="font-weight:bold;">java.lang.security.audit.formatted-sql-string.formatted-sql-string  [0m                                                                           
+          Detected a formatted string in a SQL statement. This could lead to SQL
+  injection if                                                                  
+          variables in the SQL statement are not properly sanitized. Use a      
+  prepared statements                                                           
+          (java.sql.PreparedStatement) instead. You can obtain a                
+  PreparedStatement using                                                       
+          'connection.prepareStatement'.                                        
+          Details: https://sg.run/OPXp                                          
+                                                                                
+          131┆ ResultSet answer_results =                                       
+  answer_statement.executeQuery(query)</span>;                               
+            ⋮┆----------------------------------------
+          166┆ ResultSet answer_results =                                       
+  <span style="font-weight:bold;">answer_statement.executeQuery(query)</span>;                               
+                                                                                
+  <span style="color:aqua;">                                                                  
+  src/main/java/org/owasp/webgoat/lessons/SQLInjection/ViewProfile.java </span>     
+       <span style="font-weight:bold;">java.lang.security.audit.formatted-sql-string.formatted-sql-string  [0m                                                                           
+          Detected a formatted string in a SQL statement. This could lead to SQL
+  injection if                                                                  
+          variables in the SQL statement are not properly sanitized. Use a      
+  prepared statements                                                           
+          (java.sql.PreparedStatement) instead. You can obtain a                
+  PreparedStatement using                                                       
+          'connection.prepareStatement'.                                        
+          Details: https://sg.run/OPXp                                          
+                                                                                
+          108┆ ResultSet answer_results =                                       
+  answer_statement.executeQuery(query)</span>;                               
+            ⋮┆----------------------------------------
+          157┆ ResultSet answer_results =                                       
+  <span style="font-weight:bold;">answer_statement.executeQuery(query)</span>;                               
+                                                                               
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/WsSAXInjection.java </span>
+       <span style="font-weight:bold;">contrib.owasp.java.xxe.xmlreader.owasp.java.xxe.org.xml.sax.XMLRea
+  der</span>                                                                        
+          XMLReader being instantiated without calling the setFeature functions 
+  that are generally                                                            
+          used for disabling entity processing                                  
+          Details: https://sg.run/J9rR                                          
+                                                                                
+          158┆ <span style="font-weight:bold;">XMLReader reader = XMLReaderFactory.createXMLReader()</span>;
+            ⋮┆----------------------------------------
+          158┆ <span style="font-weight:bold;">XMLReader reader = XMLReaderFactory.createXMLReader();</span>
+          159┆ <span style="font-weight:bold;">PasswordChanger changer = new PasswordChanger();</span>
+          160┆ <span style="font-weight:bold;">reader.setContentHandler(changer);</span>
+          161┆ <span style="font-weight:bold;">reader.parse(new InputSource(new StringReader(xml)));</span>
+                                                                               
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/lessons/WsSqlInjection.java </span>
+       <span style="font-weight:bold;">java.lang.security.audit.formatted-sql-string.formatted-sql-string  [0m                                                                           
+          Detected a formatted string in a SQL statement. This could lead to SQL
+  injection if                                                                  
+          variables in the SQL statement are not properly sanitized. Use a      
+  prepared statements                                                           
+          (java.sql.PreparedStatement) instead. You can obtain a                
+  PreparedStatement using                                                       
+          'connection.prepareStatement'.                                        
+          Details: https://sg.run/OPXp                                          
+                                                                                
+          233┆ ResultSet results = statement.executeQuery(query)</span>;
+                                                                         
+  <span style="color:aqua;">  src/main/java/org/owasp/webgoat/util/Interceptor.java </span>
+       <span style="font-weight:bold;">java.lang.security.audit.crypto.unencrypted-socket.unencrypted-soc
+  ket</span>                                                                        
+          Detected use of a Java socket that is not encrypted. As a result, the 
+  traffic could be read                                                         
+          by an attacker intercepting the network traffic. Use an SSLSocket     
+  created by                                                                    
+          'SSLSocketFactory' or 'SSLServerSocketFactory' instead.               
+          Details: https://sg.run/W8zA                                          
+                                                                                
+           88┆ osgSocket = <span style="font-weight:bold;">new Socket(osgServerName,                     
+  Integer.parseInt(osgServerPort))</span>;                                          
+</pre>
+</body>
+</html>
