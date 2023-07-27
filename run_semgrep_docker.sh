@@ -4,11 +4,14 @@
 
 sudo apt-get install -y aha
 
-declare -a StringArray=("--force-color -o semgrep_results.txt" "--sarif -o semgrep_results.sarif")
+declare -a StringArray=(".txt --force-color" ".sarif --sarif")
 
 for outFormat in "${StringArray[@]}"
 do
-  docker run -v ${PWD}:/src returntocorp/semgrep semgrep --oss-only --config "p/gitlab" --config p/java --config r/contrib.owasp.java --metrics='off' --severity='WARNING' --severity='ERROR' \
+  docker run -v ${PWD}:/src returntocorp/semgrep semgrep --oss-only --config p/java --config r/contrib.owasp.java --metrics='off' --severity='WARNING' --severity='ERROR' \
+  -o semgrep_results/semgrep_results_reg$outFormat 
+
+  docker run -v ${PWD}:/src returntocorp/semgrep semgrep --oss-only --config "p/gitlab" --metrics='off' --severity='WARNING' --severity='ERROR' \
   --exclude-rule gitlab.find_sec_bugs.INFORMATION_EXPOSURE_THROUGH_AN_ERROR_MESSAGE-1 \
   --exclude-rule gitlab.eslint.detect-object-injection \
   --exclude-rule gitlab.eslint.detect-non-literal-regexp \
@@ -23,7 +26,11 @@ do
   --exclude-rule gitlab.find_sec_bugs.XSS_SERVLET-2.XSS_SERVLET_PARAMETER-1 \
   --exclude-rule gitlab.flawfinder.drand48-1.erand48-1.jrand48-1.lcong48-1.lrand48-1.mrand48-1.nrand48-1.random-1.seed48-1.setstate-1.srand-1.strfry-1.srandom-1.g_rand_boolean-1.g_rand_int-1.g_rand_int_range-1.g_rand_double-1.g_rand_double_range-1.g_random_boolean-1.g_random_int-1.g_random_int_range-1.g_random_double-1.g_random_double_range-1 \
   --exclude-rule gitlab.flawfinder.StrCat-1.StrCatA-1.StrcatW-1.lstrcatA-1.lstrcatW-1.strCatBuff-1.StrCatBuffA-1.StrCatBuffW-1.StrCatChainW-1._tccat-1._mbccat-1._ftcscat-1.StrCatN-1.StrCatNA-1.StrCatNW-1.StrNCat-1.StrNCatA-1.StrNCatW-1.lstrncat-1.lstrcatnA-1.lstrcatnW-1 \
-  $outFormat 
+  -o semgrep_results/semgrep_results_gl$outFormat 
 done
 
-cat semgrep_results.txt | aha --black > semgrep_results.html
+cd semgrep_results/
+cat semgrep_results_reg.txt | aha --black > semgrep_results_reg.html
+cat semgrep_results_gl.txt | aha --black > semgrep_results_gl.html
+sed -i 's/"name": "semgrep",/"name": "semgrep-regular",/' semgrep_results_reg.sarif
+sed -i 's/"name": "semgrep",/"name": "semgrep-gitlab",/' semgrep_results_gl.sarif
