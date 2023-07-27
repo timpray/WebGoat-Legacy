@@ -13,11 +13,19 @@ jobs:
       # This step checks out a copy of your repository.
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Upload SARIF file
+      - name: Upload SARIF file (Regular)
         uses: github/codeql-action/upload-sarif@v2
         with:
           # Path to SARIF file relative to the root of the repository
-          sarif_file: semgrep_results.sarif
+          sarif_file: semgrep_results/semgrep_results_reg.sarif
           # Optional category for the results
           # Used to differentiate multiple results for one commit
-          category: semgrep-results
+          category: semgrep-results-regular
+      - name: Upload SARIF file (Gitlab)
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: semgrep_results/semgrep_results_gl.sarif
+          # Optional category for the results
+          # Used to differentiate multiple results for one commit
+          category: semgrep-results-gitlab
