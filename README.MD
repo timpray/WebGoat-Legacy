@@ -22,13 +22,13 @@ penetration testing techniques.
 vulnerable to attack. You should to disconnect from the Internet while using
 this program.*
 
-**WARNING 2:** *This program is for educational purposes only. If you attempt
+**WARNING 2:** *This prog ram is for educational purposes only. If you attempt
 these techniques without authorization, you are very likely to get caught. If
 you are caught engaging in unauthorized hacking, most companies will fire you.
 Claiming that you were doing security research will not work as that is the
 first thing that all hackers claim.*
 
-You can find more information about WebGoat at:
+You can find more information about WebGoat at: 
 (https://github.com/WebGoat/)
 
 
